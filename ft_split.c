@@ -31,8 +31,11 @@ static int	ft_rows(const char *s, char c)
 
 static void	*mr_propre(char **str_arr)
 {
-	while (*str_arr)
-		free(*str_arr++);
+	int	i;
+
+	i = -1;
+	while (str_arr[++i])
+		free(str_arr[i]);
 	free(str_arr);
 	return (NULL);
 }
