@@ -24,7 +24,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del) (void *))
 		if (!cell)
 		{
 			ft_lstclear(&lstmapped, del);
-			free(lstmapped);
+			if (lstmapped)
+				free(lstmapped);
 			return (NULL);
 		}
 		ft_lstadd_back(&lstmapped, cell);
